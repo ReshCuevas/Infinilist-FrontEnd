@@ -18,6 +18,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SingleslistComponent } from './pages/singleslist/singleslist.component';
+import { ModalLoginComponent } from './layout/modal-login/modal-login.component';
+import { ModalNewUserComponent } from './layout/modal-new-user/modal-new-user.component';
 
 
 
@@ -34,13 +36,16 @@ import { SingleslistComponent } from './pages/singleslist/singleslist.component'
     ContactComponent,
     PlaylistComponent,
     ProfileComponent,
-    SingleslistComponent
+    SingleslistComponent,
+    ModalLoginComponent,
+    ModalNewUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
+    NgbModalModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}

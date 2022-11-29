@@ -1,13 +1,11 @@
 <!-- Header section -->
-<header class="header-section clearfix">
-    
+<header class="header-section clearfix">  
     <img class="mt-4" src="./assets/img/icons/logo.png" alt="logo">
-
     <div class="header-right">
         <div class="user-panel">
-            <a href="" class="login" data-toggle="modal" data-target="#login">Iniciar sesión</a>
-            <span>|</span>
-            <a href="" class="register" data-toggle="modal" data-target="#regis">Crear cuenta</a>
+            <app-modal-login></app-modal-login>
+            <span>| &nbsp; </span>
+            <app-modal-new-user></app-modal-new-user>
         </div> 
     </div>
     <ul class="main-menu">

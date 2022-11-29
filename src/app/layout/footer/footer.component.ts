@@ -10,7 +10,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.sass']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
 
   constructor(library: FaIconLibrary) {
     library.addIcons(
@@ -20,11 +20,6 @@ export class FooterComponent implements OnInit {
       faPinterest,
       faYoutube,
       faHeart
-
     )
   }
-
-  ngOnInit(): void {
-  }
-
 }

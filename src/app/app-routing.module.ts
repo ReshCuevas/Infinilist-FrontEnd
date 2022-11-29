@@ -13,7 +13,7 @@ const routes: Routes = [
   //Ruta redirección a root
   {path:'', redirectTo: 'index', pathMatch: 'full'},
   //Rutas
-  {path: 'index', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'artist', component: ArtistComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'category', component: CategoryComponent},
