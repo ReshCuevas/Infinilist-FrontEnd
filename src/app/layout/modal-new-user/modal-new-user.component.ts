@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,6 +15,10 @@ export class ModalNewUserComponent implements OnInit {
 	open(content: any) {
 		this.modalService.open(content);
 	}
+
+  create(){
+    this.modalService.dismissAll()
+  }
 
   ngOnInit(): void {
     

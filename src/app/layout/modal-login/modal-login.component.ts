@@ -21,4 +21,8 @@ export class ModalLoginComponent{
 	open(content: any) {
 		this.modalService.open(content);
 	}
+
+  login(){
+    this.modalService.dismissAll()
+  }
 }
