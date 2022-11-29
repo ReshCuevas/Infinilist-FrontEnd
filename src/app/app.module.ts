@@ -20,6 +20,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { SingleslistComponent } from './pages/singleslist/singleslist.component';
 import { ModalLoginComponent } from './layout/modal-login/modal-login.component';
 import { ModalNewUserComponent } from './layout/modal-new-user/modal-new-user.component';
+import { ModalNewListComponent } from './layout/modal-new-list/modal-new-list.component';
 
 
 
@@ -38,7 +39,8 @@ import { ModalNewUserComponent } from './layout/modal-new-user/modal-new-user.co
     ProfileComponent,
     SingleslistComponent,
     ModalLoginComponent,
-    ModalNewUserComponent
+    ModalNewUserComponent,
+    ModalNewListComponent
   ],
   imports: [
     BrowserModule,
