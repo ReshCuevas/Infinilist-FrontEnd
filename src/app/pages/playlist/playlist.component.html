@@ -15,77 +15,12 @@
         </div>                                              
         <div class="clearfix"></div>
         <div class="row playlist-area">
-            <div class="mix col-lg-3 col-md-4 col-sm-6 music">
-                <div class="playlist-item">
-                    <img src="./assets/img/playlist/1.jpg" alt="">
-                    <h5>Canciones en vivo</h5>
+                <div *ngFor="let elemento of listas" class="mix col-lg-3 col-md-4 col-sm-6">
+                    <div class="playlist-item">
+                    <a (click)="saveListId(elemento.id)">
+                        <img src="{{elemento.imagen}}" alt=""></a>
+                    <h5>{{elemento.nombre}}</h5>
                 </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 links">
-                <div class="playlist-item">
-                    <img src="https://media3.s-nbcnews.com/i/newscms/2019_41/3044956/191009-cooking-vegetables-al-1422_ae181a762406ae9dce02dd0d5453d1ba.jpg" alt="">
-                    <h5>Recetas de pasta</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 music">
-                <div class="playlist-item">
-                    <img src="./assets/img/playlist/4.jpg" alt="">
-                    <h5>Oldies</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 music">
-                <div class="playlist-item">
-                    <img src="./assets/img/playlist/5.jpg" alt="">
-                    <h5>Rock & Roll</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 music">
-                <div class="playlist-item">
-                    <img src="./assets/img/playlist/6.jpg" alt="">
-                    <h5>Musica clásica</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 videos">
-                <div class="playlist-item">
-                    <img src="https://redhistoria.com/wp-content/uploads/2020/03/origen-de-las-matematicas.jpg" alt="">
-                    <h5>Tutoriales mate</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 links">
-                <div class="playlist-item">
-                    <img src="https://i2.wp.com/parallax.com.pe/wp-content/uploads/2017/02/vivir-de-videojuegos.png" alt="">
-                    <h5>Wishlist videojuegos</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 links">
-                <div class="playlist-item">
-                    <img src="https://elcultural.com/wp-content/uploads/2019/12/Libros-696x403.jpg" alt="">
-                    <h5>Lectura</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 videos">
-                <div class="playlist-item">
-                    <img src="https://us.as.com/us/imagenes/2019/09/05/tikitakas/1567710727_250133_1567710967_noticia_normal.jpg" alt="">
-                    <h5>Videos de terror</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 music">
-                <div class="playlist-item">
-                    <img src="./assets/img/playlist/12.jpg" alt="">
-                    <h5>Los 90’s</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 videos">
-                <div class="playlist-item">
-                    <img src="./assets/img/playlist/14.jpg" alt="">
-                    <h5>Trailers</h5>
-                </div>
-            </div>
-            <div class="mix col-lg-3 col-md-4 col-sm-6 mixed">
-            <div class="playlist-item">
-                <img src="https://dam.cocinafacil.com.mx/wp-content/uploads/2019/01/pastel-arcoiris.jpg" alt="">
-                <h5>Pasteles</h5>
-            </div>
             </div>
         </div>
     </div>
