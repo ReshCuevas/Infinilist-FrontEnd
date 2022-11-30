@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faKey, faUser } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -18,7 +19,7 @@ export class ModalLoginComponent implements OnInit {
   loginForm: FormGroup;
 
 
-  constructor(private modalService: NgbModal, library: FaIconLibrary, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private modalService: NgbModal, library: FaIconLibrary, private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
       correo: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -56,6 +57,7 @@ export class ModalLoginComponent implements OnInit {
     }
     this.socketClient.emit('login', localStorage.getItem('currentUser'))
     this.modalService.dismissAll()
+    this.router.navigate(['home'])
   }
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +13,7 @@ export class ModalNewUserComponent implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
+  constructor(private router:Router, private modalService: NgbModal, private formBuilder: FormBuilder) {
     this.signupForm = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -47,6 +48,7 @@ export class ModalNewUserComponent implements OnInit {
 				}
 			}
     this.modalService.dismissAll()
+    this.router.navigate(['home'])
   }
 
   ngOnInit(): void {
