@@ -5,37 +5,37 @@
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
-        <form>
+        <form [formGroup]="signupForm">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
                         <label for="nombre">Nombre</label>
                         <div class="form-group">
-                            <input id="nombre" class="form-control"id="nombre" type="text"/>
+                            <input formControlName="nombre" class="form-control"id="nombre" type="text"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="nombre">Apellido</label>
                         <div class="form-group">
-                            <input id="nombre" class="form-control"id="apellido" type="text"/>
+                            <input formControlName="apellido" class="form-control"id="apellido" type="text"/>
                         </div>
                     </div>
                 </div>
-                <label for="nombre">Correo</label>
+                <label for="email">Correo</label>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="correo" aria-describedby="helpId" required>
+                    <input type="text" class="form-control" formControlName="correo" aria-describedby="helpId" required>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <label for="nombre">Contraseña</label>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="password" aria-describedby="helpId" required minlength="6" >
+                            <input type="password" class="form-control" formControlName="password" aria-describedby="helpId" required minlength="6" >
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="nombre">Confirmar contraseña</label>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="confirmarPass" aria-describedby="helpId" required minlength="6">
+                            <input type="password" class="form-control" formControlName="confirm" aria-describedby="helpId" required minlength="6">
                         </div>
                     </div>
                 </div>
@@ -48,15 +48,15 @@
                     <div class="col-md-4">
                         <label for="nombre">Género</label>
                         <div class="form-group container">
-                            <input type="radio" name="sx" id="box1" value="M"> Mujer
+                            <input type="radio" name="sexo" formControlName="sexo" id="box1" value="M"> Mujer
                             <br>
-                            <input type="radio" name="sx" id="box2" value="H"> Hombre
+                            <input type="radio" name="sexo" formControlName="sexo" id="box2" value="H"> Hombre
                         </div>
                     </div>
                     <div class="col-md-8">
                         <label for="nombre">Foto de perfil</label>
                         <div class="form-group" required>
-                            <input type="file" accept="image/*" class="form-control" id="imagen" aria-describedby="helpId" >
+                            <input type="file" accept="image/*" class="form-control" formControlName="img" aria-describedby="helpId" >
                         </div>
                     </div>
                 </div>
