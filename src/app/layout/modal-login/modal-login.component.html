@@ -1,11 +1,10 @@
 <ng-template #content let-modal>
-
     <div class="modal-header">
 		<h4 class="modal-title" id="modal-basic-title">Iniciar sesión</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
-		<form>
+		<form [formGroup]="loginForm">
 			<div class="mb-3">
                 <label for="correo">Correo</label>
 				<div class="input-group">
@@ -14,7 +13,7 @@
                             <fa-icon [icon]="['fas', 'user']"></fa-icon>
                         </span>
                       </div>
-					<input id="correo" class="form-control" name="correo" type="email"/>
+					<input formControlName="correo" class="form-control" name="correo" type="email"/>
 				</div>
                 <label for="password">Contraseña</label>
                 <div class="input-group">
@@ -23,7 +22,7 @@
                             <fa-icon [icon]="['fas', 'key']"></fa-icon>
                         </span>
                       </div>
-					<input id="password" class="form-control" name="password" type="password"/>
+					<input formControlName="password" class="form-control" name="password" type="password"/>
 				</div>
 			</div>
 		</form>

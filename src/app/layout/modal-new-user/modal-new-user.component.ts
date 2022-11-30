@@ -35,7 +35,7 @@ export class ModalNewUserComponent implements OnInit {
       console.log('Estos son los datos a enviar: ', datos);
     }
 	    let xhr = new XMLHttpRequest;
-			xhr.open('POST',environment.apiURL +'/api/registro');
+			xhr.open('POST', environment.apiURL +'/api/registro');
 			xhr.setRequestHeader('Content-Type','application/json');
 			xhr.send(JSON.stringify(datos));
 			xhr.onload = function(){

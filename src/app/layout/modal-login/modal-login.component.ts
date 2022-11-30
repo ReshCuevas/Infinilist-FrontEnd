@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faKey, faPerson, faUser } from '@fortawesome/free-solid-svg-icons';
-import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { faKey, faUser } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as socketIo from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -13,9 +15,15 @@ import * as socketIo from 'socket.io-client';
 export class ModalLoginComponent implements OnInit {
 
   socketClient: any;
+  loginForm: FormGroup;
 
 
-  constructor(private modalService: NgbModal, library: FaIconLibrary) {
+  constructor(private modalService: NgbModal, library: FaIconLibrary, private formBuilder: FormBuilder) {
+    this.loginForm = this.formBuilder.group({
+      correo: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      })
+  
     library.addIcons(
       faKey,
       faUser
@@ -23,7 +31,7 @@ export class ModalLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.socketClient = socketIo.io('http://localhost:3000/')
+    this.socketClient = socketIo.io(environment.apiURL)
   }
 
 	open(content: any) {
@@ -31,8 +39,24 @@ export class ModalLoginComponent implements OnInit {
 	}
 
   login(){
-    this.socketClient.emit('login',{ id: 'usuario Demo'})
+    const datos = this.loginForm.getRawValue();
+    if (this.loginForm.valid) {
+      console.log('Estos son los datos a enviar: ', datos);
+    }
+    let xhr = new XMLHttpRequest;
+    xhr.open('POST', environment.apiURL + '/api/login');
+    xhr.setRequestHeader('Content-Type','application/json');
+    xhr.send(JSON.stringify(datos));
+    xhr.onload = function(){
+      if(xhr.status == 200 ){
+        localStorage.setItem("currentUser",xhr.response)
+      }else{
+        console.log("Error de autenticación");
+      }
+    }
+    this.socketClient.emit('login', localStorage.getItem('currentUser'))
     this.modalService.dismissAll()
-    console.log('hola');
   }
+
+
 }
