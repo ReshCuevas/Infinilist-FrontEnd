@@ -11,5 +11,4 @@ export class PlaylistComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

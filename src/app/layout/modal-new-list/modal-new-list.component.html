@@ -5,27 +5,27 @@
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
-        <form>
+        <form [formGroup]="newListForm">
             <div class="container-fluid">
                 <label for="list-name">Nombre de la lista</label>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="list-name" aria-describedby="helpId" required>
+                    <input type="text" class="form-control" name="list-name" formControlName="nombre" aria-describedby="helpId" required>
                 </div>
-                <label for="list-type">Tipo</label>
+                <label for="tipo">Tipo</label>
                 <div class="form-group container">
-                    <input type="radio" name="list-type" id="box1" value="1"> Texto
+                    <input type="radio" name="tipo" formControlName="tipo" id="box1" value="texto"> Texto
                     <br>
-                    <input type="radio" name="list-type" id="box2" value="2"> Imágenes
+                    <input type="radio" name="tipo" formControlName="tipo" id="box2" value="imagenes"> Imágenes
                     <br>
-                    <input type="radio" name="list-type" id="box3" value="3"> Multimedia
+                    <input type="radio" name="tipo" formControlName="tipo" id="box3" value="multimedia"> Multimedia
                 </div>
                 <label for="list-name">Descripción</label>
                 <div class="form-group">
-                    <input type="textarea" class="form-control" name="list-name" aria-describedby="helpId" required>
+                    <input type="textarea" class="form-control" name="list-name" formControlName="descripcion" aria-describedby="helpId" required>
                 </div>
                 <label for="list-image">Imagen</label>
                 <div class="form-group" required>
-                    <input type="file" accept="image/*" class="form-control" name="list-image" aria-describedby="helpId" >
+                    <input type="file" accept="image/*" class="form-control" name="list-image" formControlName="imagen" aria-describedby="helpId" >
                 </div>
 			</div>	
         </form>
