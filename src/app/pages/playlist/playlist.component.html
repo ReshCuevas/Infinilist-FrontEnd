@@ -1,0 +1,48 @@
+<!-- Playlist section -->
+<section class="playlist-section spad">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h2>Listas</h2>
+        </div>
+        <div class="container">
+            <ul class="playlist-filter controls">
+                <li class="control" data-filter=".music">Música</li>
+                <li class="control" data-filter=".videos">Videos</li>
+                <li class="control" data-filter=".links">Links</li>
+                <li class="control" data-filter=".mixed">Mixtas</li>
+                <li class="control" data-filter="all">Todas las listas</li>
+            </ul>
+        </div>                                              
+        <div class="clearfix"></div>
+        <div class="row playlist-area">
+                <div *ngFor="let elemento of listas" class="mix col-lg-3 col-md-4 col-sm-6">
+                    <div class="playlist-item">
+                    <a (click)="saveListId(elemento.id)">
+                        <img src="{{elemento.imagen}}" alt=""></a>
+                    <h5>{{elemento.nombre}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Playlist section end -->
+
+<!-- Help section end -->
+<section class="help-section spad pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <app-modal-new-list></app-modal-new-list>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex h-100 align-items-end">
+                    <form class="search-form">
+                        <input type="text" placeholder="Hit it">
+                        <button>Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Help section end -->

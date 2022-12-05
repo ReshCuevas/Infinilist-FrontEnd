@@ -1,0 +1,71 @@
+<ng-template #content let-modal>
+
+    <div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Crear cuenta</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        <form [formGroup]="signupForm">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="nombre">Nombre</label>
+                        <div class="form-group">
+                            <input formControlName="nombre" class="form-control"id="nombre" type="text"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nombre">Apellido</label>
+                        <div class="form-group">
+                            <input formControlName="apellido" class="form-control"id="apellido" type="text"/>
+                        </div>
+                    </div>
+                </div>
+                <label for="email">Correo</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="correo" aria-describedby="helpId" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="nombre">Contraseña</label>
+                        <div class="form-group">
+                            <input type="password" class="form-control" formControlName="password" aria-describedby="helpId" required minlength="6" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nombre">Confirmar contraseña</label>
+                        <div class="form-group">
+                            <input type="password" class="form-control" formControlName="confirm" aria-describedby="helpId" required minlength="6">
+                        </div>
+                    </div>
+                </div>
+                <label for="nombre">Fecha de nacimiento</label>
+                <div class="form-group">
+                        <input type="date" class="form-control" id="fecha" aria-describedby="helpId" 
+                        placeholder="dd/mm/aaaa" max="28/11/2002" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="nombre">Género</label>
+                        <div class="form-group container">
+                            <input type="radio" name="sexo" formControlName="sexo" id="box1" value="M"> Mujer
+                            <br>
+                            <input type="radio" name="sexo" formControlName="sexo" id="box2" value="H"> Hombre
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="nombre">Foto de perfil</label>
+                        <div class="form-group" required>
+                            <input type="file" accept="image/*" class="form-control" formControlName="img" aria-describedby="helpId" >
+                        </div>
+                    </div>
+                </div>
+			</div>	
+        </form>
+    </div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="create()">Registrarse</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-outline-primary" (click)="open(content)">Crear cuenta</button>

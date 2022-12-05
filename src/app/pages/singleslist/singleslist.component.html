@@ -1,0 +1,18 @@
+<!-- Blog section -->
+<section class="blog-section spad">
+  <div class="container">
+    <!-- Blog post -->
+    <div id="bod"></div>
+    <div class="blog-item" id="ct">
+      <img src="{{ lista.imagen }}" alt="" />
+      <h3>{{ lista.nombre }}</h3>
+      <div id="deL">{{ lista.descripcion }}</div>
+    </div>
+    <ul id="elem">
+      <li *ngFor="let elemento of lista.elementos">{{elemento}}</li>
+    </ul>
+    <app-modal-delete-list></app-modal-delete-list> &nbsp;
+    <app-modal-add-to-list></app-modal-add-to-list>
+  </div>
+</section>
+<!-- Blog section end -->

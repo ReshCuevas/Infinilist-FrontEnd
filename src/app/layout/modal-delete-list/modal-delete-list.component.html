@@ -1,0 +1,15 @@
+<ng-template #content let-modal>
+
+    <div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Eliminar Lista</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        ¿Seguro que deseas eliminar esta lista?
+    </div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="deleteList()">Eliminar</button>
+	</div>
+</ng-template>
+
+<button class="site-btn" (click)="open(content)">Eliminar Lista</button>

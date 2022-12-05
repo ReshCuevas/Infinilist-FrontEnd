@@ -1,0 +1,38 @@
+<ng-template #content let-modal>
+
+    <div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Nueva Lista</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        <form [formGroup]="newListForm">
+            <div class="container-fluid">
+                <label for="list-name">Nombre de la lista</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="list-name" formControlName="nombre" aria-describedby="helpId" required>
+                </div>
+                <label for="tipo">Tipo</label>
+                <div class="form-group container">
+                    <input type="radio" name="tipo" formControlName="tipo" id="box1" value="texto"> Texto
+                    <br>
+                    <input type="radio" name="tipo" formControlName="tipo" id="box2" value="imagenes"> Imágenes
+                    <br>
+                    <input type="radio" name="tipo" formControlName="tipo" id="box3" value="multimedia"> Multimedia
+                </div>
+                <label for="list-name">Descripción</label>
+                <div class="form-group">
+                    <input type="textarea" class="form-control" name="list-name" formControlName="descripcion" aria-describedby="helpId" required>
+                </div>
+                <label for="list-image">Imagen</label>
+                <div class="form-group" required>
+                    <input type="file" accept="image/*" class="form-control" name="list-image" formControlName="imagen" aria-describedby="helpId" >
+                </div>
+			</div>	
+        </form>
+    </div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="create()">Crear</button>
+	</div>
+</ng-template>
+
+<button class="site-btn" (click)="open(content)">Nueva lista</button>
