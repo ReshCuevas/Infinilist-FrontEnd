@@ -20,7 +20,6 @@ export class SingleslistComponent implements OnInit {
         var self = this
     		xhr.onload = function(){
         		self.lista = JSON.parse(xhr.response);
-        		console.log(self.lista);
     		}
   }
 }

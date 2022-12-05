@@ -23,6 +23,8 @@ import { ModalNewUserComponent } from './layout/modal-new-user/modal-new-user.co
 import { ModalNewListComponent } from './layout/modal-new-list/modal-new-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalEditUserComponent } from './layout/modal-edit-user/modal-edit-user.component';
+import { ModalDeleteListComponent } from './layout/modal-delete-list/modal-delete-list.component';
+import { ModalAddToListComponent } from './layout/modal-add-to-list/modal-add-to-list.component';
 
 
 
@@ -43,7 +45,9 @@ import { ModalEditUserComponent } from './layout/modal-edit-user/modal-edit-user
     ModalLoginComponent,
     ModalNewUserComponent,
     ModalNewListComponent,
-    ModalEditUserComponent
+    ModalEditUserComponent,
+    ModalDeleteListComponent,
+    ModalAddToListComponent
   ],
   imports: [
     BrowserModule,
