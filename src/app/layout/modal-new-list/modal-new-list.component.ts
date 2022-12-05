@@ -19,7 +19,7 @@ export class ModalNewListComponent implements OnInit {
       tipo: ['', Validators.required],
       descripcion: [''],
       imagen: [''],
-      elementos: [ ],
+      elementos: [[]],
       user: [localStorage.getItem('currentUser')]
       })
    }

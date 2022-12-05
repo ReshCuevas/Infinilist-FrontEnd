@@ -9,7 +9,7 @@
       <div id="deL">{{ lista.descripcion }}</div>
     </div>
     <ul id="elem">
-      <li *ngFor="let elemento of lista.elementos">{{ elemento.elementos }}</li>
+      <li *ngFor="let elemento of lista.elementos">{{elemento}}</li>
     </ul>
     <app-modal-delete-list></app-modal-delete-list> &nbsp;
     <app-modal-add-to-list></app-modal-add-to-list>

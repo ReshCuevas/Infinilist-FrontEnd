@@ -19,7 +19,8 @@ export class SingleslistComponent implements OnInit {
     		xhr.send();
         var self = this
     		xhr.onload = function(){
-        		self.lista = JSON.parse(xhr.response);
+        	self.lista = JSON.parse(xhr.response);
+          console.log(self.lista.elementos);
     		}
   }
 }

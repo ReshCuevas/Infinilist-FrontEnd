@@ -26,10 +26,13 @@ export class ModalAddToListComponent implements OnInit {
 
   add(){
     let xhr = new XMLHttpRequest;
-    const datos = this.addItemForm.getRawValue();
+    const datos = {elementos: this.addItemForm.getRawValue().elementos};
+    console.log(typeof datos);
     xhr.open('PUT', environment.apiURL + '/api/elementos/' + localStorage.getItem('listId'));
     xhr.setRequestHeader('Content-Type','application/json');
+    console.log(JSON.stringify(datos));
     xhr.send(JSON.stringify(datos));
+
     this.modalService.dismissAll()
   }
 
